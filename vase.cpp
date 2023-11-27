@@ -38,7 +38,7 @@ int main()
 	{
 		gradatieStanga = gradatieDreapta;
 		gradatieDreapta += volum[culoare];
-	}
+ 	}
 	if (gradatieStanga == 0 || gradatieDreapta == 0)
 	{
 		if (gradatieDreapta == 0)
@@ -54,8 +54,21 @@ int main()
 	}
 	else
 	{
-		scrie << gradatieStanga*(-1) << " S\n";
-		scrie << gradatieDreapta << " D";
+	    if (gradatieStanga < 0 && gradatieDreapta < 0)
+        {
+            scrie << gradatieDreapta*(-1) << " S\n";
+            scrie << gradatieStanga*(-1) << " S";
+        }
+        else if (gradatieStanga > 0 && gradatieDreapta > 0)
+        {
+            scrie << gradatieDreapta << " D\n";
+            scrie << gradatieStanga << " D";
+        }
+        else
+        {
+            scrie << gradatieStanga*(-1) << " S\n";
+            scrie << gradatieDreapta << " D";
+        }
 	}
 	scrie.close();
 	return 0;
